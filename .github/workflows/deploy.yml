@@ -54,13 +54,13 @@ jobs:
               npm install -g pm2 || { echo "Failed to install PM2"; exit 1; }
             fi
 
-            # Start or restart the application with PM2
+            # Start or restart the Next.js app with PM2
             if pm2 list | grep -q leiwand.bio; then
               echo "Restarting the application with PM2..."
               pm2 restart leiwand.bio || { echo "Failed to restart application"; exit 1; }
             else
               echo "Starting the application with PM2..."
-              pm2 start server.js --name leiwand.bio || { echo "Failed to start application"; exit 1; }
+              pm2 start "npm run start" --name leiwand.bio -- start || { echo "Failed to start application"; exit 1; }
             fi
 
             # Save the PM2 process list to ensure it auto-starts on reboot
