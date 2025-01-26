@@ -23,14 +23,22 @@ jobs:
       # Step 3: Deploy files to the DigitalOcean droplet via SCP
       - name: Deploy Files to DigitalOcean Droplet
         run: |
-          scp -o StrictHostKeyChecking=no -r * root@${{ secrets.DROPLET_IP }}:/var/www/leiwand.bio
+          echo "Transferring files to the droplet..."
+          scp -o StrictHostKeyChecking=no -r . root@${{ secrets.DROPLET_IP }}:/var/www/leiwand.bio
 
       # Step 4: SSH into the droplet and execute deployment commands
       - name: SSH and Run Deployment Commands
         run: |
           ssh -o StrictHostKeyChecking=no root@${{ secrets.DROPLET_IP }} <<EOF
+            set -e
+
             # Navigate to the application directory
+            echo "Navigating to the application directory..."
             cd /var/www/leiwand.bio || exit 1
+
+            # Skip Husky during deployment
+            echo "Disabling Husky hooks for production..."
+            export HUSKY=0
 
             # Install dependencies
             echo "Installing dependencies..."
@@ -40,16 +48,16 @@ jobs:
             echo "Building the application..."
             npm run build || { echo "Failed to build the application"; exit 1; }
 
-            # Check if PM2 is installed, install if not
+            # Ensure PM2 is installed
             if ! command -v pm2 &> /dev/null; then
               echo "Installing PM2 globally..."
               npm install -g pm2 || { echo "Failed to install PM2"; exit 1; }
             fi
 
-            # Check if the app is already running and start/restart it
+            # Start or restart the application with PM2
             if pm2 list | grep -q leiwand.bio; then
               echo "Restarting the application with PM2..."
-              pm2 restart leiwaand.bio || { echo "Failed to restart application"; exit 1; }
+              pm2 restart leiwand.bio || { echo "Failed to restart application"; exit 1; }
             else
               echo "Starting the application with PM2..."
               pm2 start server.js --name leiwand.bio || { echo "Failed to start application"; exit 1; }
@@ -58,4 +66,6 @@ jobs:
             # Save the PM2 process list to ensure it auto-starts on reboot
             echo "Saving PM2 process list..."
             pm2 save || { echo "Failed to save PM2 process list"; exit 1; }
+
+            echo "Deployment completed successfully!"
           EOF
