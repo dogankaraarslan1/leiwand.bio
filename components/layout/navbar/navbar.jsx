@@ -21,11 +21,12 @@ const items = [
     icon: <CircleDot size={18} />,
   },
 
-  {
-    title: 'Analytics',
-    href: '/admin/analytics',
-    icon: <BarChart color="black" size={18} />,
-  },
+   // Removed the Analytics menu item
+  // {
+  //   title: 'Analytics',
+  //   href: '/admin/analytics',
+  //   icon: <BarChart color="black" size={18} />,
+  // },
   {
     title: 'Settings',
     href: '/admin/settings',

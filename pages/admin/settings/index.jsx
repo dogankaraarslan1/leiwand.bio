@@ -135,7 +135,7 @@ const Settings = () => {
                     <Dialog.Root>
                       <Dialog.Trigger asChild>
                         <button className="relative w-full lg:w-[490px] h-[45px] border rounded-3xl border-[#000] outline-none text-white bg-slate-900 p-2 hover:bg-slate-700">
-                          Pick an image
+                          Pick an image (max 600KB)
                         </button>
                       </Dialog.Trigger>
                       <UploadModal

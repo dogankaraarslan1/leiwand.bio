@@ -12,9 +12,9 @@ const Footer = () => {
           <Link
             className="text-blue-800"
             target="_blank"
-            href="https://twitter.com/NerdyProgramme2"
+            href="https://instagram.com/songverwandt"
           >
-            @urdadx
+            @songverwandt
           </Link>
         </p>
       </footer>

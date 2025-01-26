@@ -82,7 +82,7 @@ const Onboarding = () => {
               <div>
                 <div className="flex items-center justify-between">
                   <label
-                    for="handle"
+                    
                     htmlFor="handle"
                     className="block text-sm font-medium leading-6 text-gray-700"
                   >
