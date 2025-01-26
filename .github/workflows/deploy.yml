@@ -3,36 +3,59 @@ name: Deploy to DigitalOcean Droplet
 on:
   push:
     branches:
-      - main
+      - main  # Adjust to the branch you want to deploy from
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v3
+      # Step 1: Checkout the latest code from the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
-    - name: Install Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18
+      # Step 2: Set up SSH agent with the private key from GitHub Secrets
+      - name: Setup SSH for DigitalOcean
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-    - name: Install Dependencies
-      run: npm install
+      # Step 3: Deploy files to the DigitalOcean droplet via SCP
+      - name: Deploy Files to DigitalOcean Droplet
+        run: |
+          scp -o StrictHostKeyChecking=no -r * root@${{ secrets.DROPLET_IP }}:/var/www/shared-node-app
 
-    - name: Build Application
-      run: npm run build
+      # Step 4: SSH into the droplet and execute deployment commands
+      - name: SSH and Run Deployment Commands
+        run: |
+          ssh -o StrictHostKeyChecking=no root@${{ secrets.DROPLET_IP }} <<EOF
+            # Navigate to the application directory
+            cd /var/www/leiwand.bio || exit 1
 
-    - name: Deploy to Droplet
-      uses: appleboy/ssh-action@v0.1.10
-      with:
-        host: ${{ secrets.DROPLET_IP }}
-        username: ${{ secrets.SSH_USERNAME }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        script: |
-          cd /var/www/leiwand.bio || exit
-          git pull origin main
-          npm install
-          npm run build
-          pm2 restart all
+            # Install dependencies
+            echo "Installing dependencies..."
+            npm install || { echo "Failed to install dependencies"; exit 1; }
+
+            # Build the application
+            echo "Building the application..."
+            npm run build || { echo "Failed to build the application"; exit 1; }
+
+            # Check if PM2 is installed, install if not
+            if ! command -v pm2 &> /dev/null; then
+              echo "Installing PM2 globally..."
+              npm install -g pm2 || { echo "Failed to install PM2"; exit 1; }
+            fi
+
+            # Check if the app is already running and start/restart it
+            if pm2 list | grep -q leiwand.bio; then
+              echo "Restarting the application with PM2..."
+              pm2 restart leiwaand.bio || { echo "Failed to restart application"; exit 1; }
+            else
+              echo "Starting the application with PM2..."
+              pm2 start server.js --name leiwand.bio || { echo "Failed to start application"; exit 1; }
+            fi
+
+            # Save the PM2 process list to ensure it auto-starts on reboot
+            echo "Saving PM2 process list..."
+            pm2 save || { echo "Failed to save PM2 process list"; exit 1; }
+          EOF
