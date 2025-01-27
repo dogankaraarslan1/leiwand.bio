@@ -1,12 +1,12 @@
-# Librelinks
+# Leiwand.bio
 
-Librelinks is an open-source link in bio tool for everyone.
+Leiwand.bio is an open-source link in bio tool for everyone.
 
-The goal of Librelinks is to provide users with a platform that helps them to connect to their audience through a single link.
+The goal of Leiwand.bio is to provide users with a platform that helps them to connect to their audience through a single link.
 
-Official site: [https://librelinks.vercel.app](https://librelinks.vercel.app)
+Official site: [https://Leiwand.bio.vercel.app](https://Leiwand.bio.vercel.app)
 
-An example Librelinks page: [https://librelinks.vercel.app/maayez](https://librelinks.vercel.app/maayez)
+An example Leiwand.bio page: [https://Leiwand.bio.vercel.app/maayez](https://Leiwand.bio.vercel.app/maayez)
 
 ## ⚒️ Demo
 
@@ -14,7 +14,7 @@ Create and customize your link in bio in minutes✨
 
 <div style="width: 600px;">
 
-![Librelinks Demo](.github/demo.gif)
+![Leiwand.bio Demo](.github/demo.gif)
 
 </div>
 
@@ -41,7 +41,7 @@ It has 4 Core Features:
 
 ## 📁 Project Structure
 
-Librelinks is created with the NextJS web framework and follows its project structure.
+Leiwand.bio is created with the NextJS web framework and follows its project structure.
 
 | <div style="width:115px">**Page Route**</div> | **Code Path**               | **Description**                                 |
 | --------------------------------------------- | --------------------------- | ----------------------------------------------- |
@@ -71,21 +71,21 @@ Checkout the `.env.example` file to learn how to get started.
 
 ## 💻 Local Development
 
-1. Download the repo `git clone https://github.com/urdadx/librelinks.git`
-2. Change the directory `cd librelinks`
+1. Download the repo `git clone https://github.com/urdadx/Leiwand.bio.git`
+2. Change the directory `cd Leiwand.bio`
 3. Install the dependency `npm install`
 4. Start a development server `npm run dev`
-5. Open your browser and visit [http://localhost:3000](http://localhost:3000) to see Librelinks live
+5. Open your browser and visit [http://localhost:3000](http://localhost:3000) to see Leiwand.bio live
 
 ## Contributing 🤝
 
 We love our contributors! Here's how you can contribute:
 
-- [Open an issue](https://github.com/urdadx/librelinks/issues) if you believe you've encountered a bug.
-- Make a [pull request](https://github.com/urdadx/librelinks/pull) to add new features/make quality-of-life improvements/fix bugs.
+- [Open an issue](https://github.com/urdadx/Leiwand.bio/issues) if you believe you've encountered a bug.
+- Make a [pull request](https://github.com/urdadx/Leiwand.bio/pull) to add new features/make quality-of-life improvements/fix bugs.
 
-<a href="https://github.com/urdadx/librelinks/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=urdadx/librelinks" />
+<a href="https://github.com/urdadx/Leiwand.bio/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=urdadx/Leiwand.bio" />
 </a>
 
 ## Repo Activity

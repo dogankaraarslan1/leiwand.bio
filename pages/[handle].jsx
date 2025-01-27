@@ -92,7 +92,7 @@ const ProfilePage = () => {
   return (
     <>
       <Head>
-        <title> @{handle} | Librelinks</title>
+        <title> @{handle} | Leiwand.bio</title>
       </Head>
       {!query.isIframe ? (
         <Script

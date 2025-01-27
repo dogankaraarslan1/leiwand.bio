@@ -7,9 +7,9 @@ import Head from 'next/head';
 import { useSession } from 'next-auth/react';
 
 export const metadata = {
-  title: 'Librelinks',
+  title: 'Leiwand.bio',
   description:
-    'Librelinks is an opensource link in bio tool that helps you easily manage your links, transforming your online presence.',
+    'Leiwand.bio is a link in bio tool that helps you easily manage your links, transforming your online presence.',
 };
 
 const Home = () => {
@@ -19,35 +19,35 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Librelinks | A free & opensource link in bio tool</title>
+        <title>Leiwand.bio | A free link in bio tool</title>
         {/* <!-- Open Graph (OG) meta tags --> */}
-        <meta property="og:url" content="https://librelinks.vercel.app/" />
-        <meta property="og:url" content="https://librelinks.me/" />
-        <meta property="og:url" content="https://www.librelinks.me/" />
+        <meta property="og:url" content="https://Leiwand.bio.vercel.app/" />
+        <meta property="og:url" content="https://Leiwand.bio.me/" />
+        <meta property="og:url" content="https://www.Leiwand.bio.me/" />
         <meta property="og:type" content="website" />
         <meta
           property="og:site_name"
-          content="Librelinks - The free & opensource link in bio tool"
+          content="Leiwand.bio - The free & opensource link in bio tool"
         />
-        <meta property="og:title" content="Librelinks" />
+        <meta property="og:title" content="Leiwand.bio" />
         <meta
           property="og:description"
-          content="Librelinks is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
+          content="Leiwand.bio is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
         />
         <meta
           property="og:image"
           itemprop="image"
-          content="https://librelinks.vercel.app/og.png"
+          content="https://Leiwand.bio.vercel.app/og.png"
         />
         <meta
           property="og:image"
           itemprop="image"
-          content="https://librelinks.me/og.png"
+          content="https://Leiwand.bio.me/og.png"
         />
         <meta
           property="og:image"
           itemprop="image"
-          content="https://www.librelinks.me/og.png"
+          content="https://www.Leiwand.bio.me/og.png"
         />
 
         {/* <!-- Twitter Card meta tags --> */}
@@ -56,102 +56,102 @@ const Home = () => {
         <meta name="twitter:creator" content="@urdadx" />
         <meta
           property="twitter:domain"
-          content="https://librelinks.vercel.app/"
+          content="https://Leiwand.bio.vercel.app/"
         />
-        <meta property="twitter:domain" content="https://librelinks.me/" />
-        <meta property="twitter:domain" content="https://www.librelinks.me/" />
-        <meta property="twitter:url" content="https://librelinks.vercel.app/" />
-        <meta name="twitter:title" content="Librelinks" />
+        <meta property="twitter:domain" content="https://Leiwand.bio.me/" />
+        <meta property="twitter:domain" content="https://www.Leiwand.bio.me/" />
+        <meta property="twitter:url" content="https://Leiwand.bio.vercel.app/" />
+        <meta name="twitter:title" content="Leiwand.bio" />
         <meta
           name="twitter:description"
-          content="Librelinks is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
+          content="Leiwand.bio is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
         />
         <meta
           name="twitter:image"
-          content="https://librelinks.vercel.app/og.png"
+          content="https://Leiwand.bio.vercel.app/og.png"
         />
-        <meta name="twitter:image" content="https://librelinks.me/og.png" />
-        <meta name="twitter:image" content="https://www.librelinks.me/og.png" />
+        <meta name="twitter:image" content="https://Leiwand.bio.me/og.png" />
+        <meta name="twitter:image" content="https://www.Leiwand.bio.me/og.png" />
         <meta
           data-rh="true"
           name="twitter:image:alt"
-          content="Librelinks is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
+          content="Leiwand.bio is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
         />
 
         {/* <!-- LinkedIn meta tags --> */}
         <meta
           property="og:linkedin:image"
-          content="https://librelinks.vercel.app/og.png"
+          content="https://Leiwand.bio.vercel.app/og.png"
         />
         <meta
           property="og:linkedin:image"
-          content="https://librelinks.me/og.png"
+          content="https://Leiwand.bio.me/og.png"
         />
         <meta
           property="og:linkedin:image"
-          content="https://www.librelinks.me/og.png"
+          content="https://www.Leiwand.bio.me/og.png"
         />
-        <meta property="og:linkedin:title" content="Librelinks" />
+        <meta property="og:linkedin:title" content="Leiwand.bio" />
         <meta
           property="og:linkedin:description"
-          content="Librelinks is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
+          content="Leiwand.bio is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
         />
 
         {/* <!-- Facebook meta tags --> */}
         <meta
           property="og:facebook:image"
-          content="https://librelinks.vercel.app/og.png"
+          content="https://Leiwand.bio.vercel.app/og.png"
         />
         <meta
           property="og:facebook:image"
-          content="https://librelinks.me/og.png"
+          content="https://Leiwand.bio.me/og.png"
         />
         <meta
           property="og:facebook:image"
-          content="https://www.librelinks.me/og.png"
+          content="https://www.Leiwand.bio.me/og.png"
         />
-        <meta property="og:facebook:title" content="Librelinks" />
+        <meta property="og:facebook:title" content="Leiwand.bio" />
         <meta
           property="og:facebook:description"
-          content="Librelinks is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
+          content="Leiwand.bio is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
         />
 
         {/* <!-- Instagram meta tags --> */}
         <meta
           property="og:instagram:image"
-          content="https://librelinks.vercel.app/og.png"
+          content="https://Leiwand.bio.vercel.app/og.png"
         />
         <meta
           property="og:instagram:image"
-          content="https://librelinks.me/og.png"
+          content="https://Leiwand.bio.me/og.png"
         />
         <meta
           property="og:instagram:image"
-          content="https://www.librelinks.me/og.png"
+          content="https://www.Leiwand.bio.me/og.png"
         />
-        <meta property="og:instagram:title" content="Librelinks" />
+        <meta property="og:instagram:title" content="Leiwand.bio" />
         <meta
           property="og:instagram:description"
-          content="Librelinks is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
+          content="Leiwand.bio is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
         />
 
         {/* <!-- Pinterest meta tags --> */}
         <meta
           property="og:pinterest:image"
-          content="https://librelinks.vercel.app/og.png"
+          content="https://Leiwand.bio.vercel.app/og.png"
         />
         <meta
           property="og:pinterest:image"
-          content="https://librelinks.me/og.png"
+          content="https://Leiwand.bio.me/og.png"
         />
         <meta
           property="og:pinterest:image"
-          content="https://www.librelinks.me/og.png"
+          content="https://www.Leiwand.bio.me/og.png"
         />
-        <meta property="og:pinterest:title" content="Librelinks" />
+        <meta property="og:pinterest:title" content="Leiwand.bio" />
         <meta
           property="og:pinterest:description"
-          content="Librelinks is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
+          content="Leiwand.bio is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
         />
       </Head>
       <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
@@ -170,7 +170,7 @@ const Home = () => {
                   className="flex items-center gap-2 font-bold text-xl"
                   href="/"
                 >
-                  <h3 className="lg:block">Librelinks</h3>
+                  <h3 className="lg:block">Leiwand.bio</h3>
                 </Link>
 
                 <div className="relative items-center w-28 z-10 md:absolute md:inset-y-0 md:right-0">
@@ -190,7 +190,7 @@ const Home = () => {
                   className="group inline-flex items-center gap-2 px-4 py-4 text-sm bg-gray-50 border rounded-3xl text-gray-500 w-[180px] h-[35px] justify-center transition-colors hover:bg-gray-100"
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://github.com/urdadx/librelinks"
+                  href="https://github.com/urdadx/Leiwand.bio"
                 >
                   <div className="">
                     <GithubStar />
@@ -204,7 +204,7 @@ const Home = () => {
                   <span className="hero-title block ">link in bio tool</span>
                 </h1>
                 <p className="max-w-md mx-auto mt-3 text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                  Librelinks is an opensource link in bio tool that helps you
+                  Leiwand.bio is an opensource link in bio tool that helps you
                   easily manage your links, transforming your online presence.
                 </p>
               </div>
@@ -245,9 +245,9 @@ const Home = () => {
                 className="hover:text-emerald-500"
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://twitter.com/NerdyProgramme2"
+                href="https://instagram.com/songverwandt"
               >
-                @urdadx
+                @songverwandt
               </a>
             </h2>
             <div className="flex items-center gap-4 justify-center mt-4">

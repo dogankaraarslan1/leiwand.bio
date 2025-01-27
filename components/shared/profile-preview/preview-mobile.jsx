@@ -133,7 +133,7 @@ const PreviewMobile = ({ close }) => {
                 target="_blank"
                 href="https://twitter.com/NerdyProgramme2"
               >
-                Librelinks
+                Leiwand.bio
               </Link>
             </p>
           </footer>
